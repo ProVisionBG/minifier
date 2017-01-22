@@ -2,21 +2,27 @@
 return [
     /**
      * Включване / изключване
+     * @var boolean
      */
     'enable' => true,
 
     /**
      * Автоматично добавя на middleware
+     * @var boolean
      */
     'autoload_middleware' => true,
 
     /**
-     * Премахване на новите редове
+     * Minifiers
+     * @var \ProVision\Minifier\Minifiers\MinifierInterface[]
      */
-    'remove_lines' => true,
-
-    /**
-     * Премахване на коментарите
-     */
-    'remove_comments' => true
+    'html_minifiers' => [
+        \ProVision\Minifier\Minifiers\Html\CommentMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\WhitespaceMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\AttributeQuoteMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\EmptyAttributeMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\BooleanAttributeMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\JavascriptEventsMinifier::class,
+        \ProVision\Minifier\Minifiers\Html\RedundantAttributeMinifier::class,
+    ]
 ];
