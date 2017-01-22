@@ -1,0 +1,22 @@
+{
+  "name": "provision/minifier",
+  "description": "ProVision Minifier",
+  "version": "0.0.1",
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Venelin Iliev",
+      "homepage": "http://veneliniliev.com"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">5.6.4 || ^7.0",
+    "laravel/laravel": "5.3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ProVision\\Minifier\\": "src/"
+    }
+  }
+}
