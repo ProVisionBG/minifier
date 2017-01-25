@@ -21,8 +21,8 @@ class Minifier
     {
 
         $this->context = $context;
-        
-        if (!Config::get('provision_minifier.enable', false) && count(Config::get('provision_minifier.html_minifiers')) > 0) {
+
+        if (!Config::get('provision_minifier.enable', false) || count(Config::get('provision_minifier.html_minifiers')) < 1) {
             return $context;
         }
 

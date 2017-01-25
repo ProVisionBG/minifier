@@ -4,7 +4,7 @@ return [
      * Включване / изключване
      * @var boolean
      */
-    'enable' => true,
+    'enable' => false,
 
     /**
      * Автоматично добавя на middleware
