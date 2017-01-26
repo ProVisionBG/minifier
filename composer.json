@@ -1,7 +1,6 @@
 {
   "name": "provision/minifier",
   "description": "ProVision Minifier",
-  "version": "0.2.2",
   "license": "Apache License 2.0",
   "authors": [
     {
@@ -12,7 +11,7 @@
   "type": "library",
   "require": {
     "php": ">5.6.4 || ^7.0",
-    "laravel/framework": "5.3.*"
+    "laravel/framework": "^5.3"
   },
   "autoload": {
     "psr-4": {
