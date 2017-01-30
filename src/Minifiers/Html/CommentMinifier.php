@@ -18,7 +18,7 @@ class CommentMinifier implements MinifierInterface
         // Remove htmlcomments
         $additionaly = array(
             '/<!--[^\[](.*?)[^\]]-->/s' => '',
-            '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\\\' | ")\/\/.*))/' => '',
+            //'/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\\\' | ")\/\/.*))/' => '', //@todo: да се помисли как да ги чисти по добре
         );
         return $context->setContents(preg_replace(array_keys($additionaly), array_values($additionaly), $context->getContents()));
     }
