@@ -10,6 +10,7 @@ namespace ProVision\Minifier\Middleware;
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Response;
+use ProVision\Administration\Administration;
 use ProVision\Minifier\Minifier;
 use ProVision\Minifier\MinifierContext;
 
@@ -44,6 +45,13 @@ class MinifierMiddleware
     public function handle($request, Closure $next)
     {
         $response = $next($request);
+
+        /*
+         * Спиране на минифицирането в админа
+         */
+        if (class_exists('ProVision\Administration\Administration') && Administration::routeInAdministration()) {
+            return $response;
+        }
 
         if ($this->isAResponseObject($response) && $this->isAnHtmlResponse($response)) {
             $output = $response->getContent();
